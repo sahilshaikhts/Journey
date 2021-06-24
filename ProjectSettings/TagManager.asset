@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bezier
+  - Tube
+  - boid
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - NoPPX
+  - PostProccess
   - 
   - 
   - 
