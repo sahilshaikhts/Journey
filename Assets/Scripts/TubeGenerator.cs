@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TubeGenerator : MonoBehaviour
 {
+    [HideInInspector]
+    public GameManager sceneManager;
+
     [Header("Tube properties")]
 
     [SerializeField]
@@ -27,24 +30,18 @@ public class TubeGenerator : MonoBehaviour
 
     public Material material;
 
-    bool gameRunning = true;
-
-    void Start()
+    public void Initialize(int meshInitLength)
     {
         perlinMapPosition = new Vector2(0.001f, 0.001f);
 
         bezier.GizmosOn = true;
 
-        InitializeTube();
+        InitializeTube(meshInitLength);
         tube.GetComponent<Tube>().path = bezier.GetCurvePoints();
-
-        StartCoroutine(ExtendMeshAtInterval(2));
-        StartCoroutine(CropMesh());
-        StartCoroutine(RecenterMesh());
 
     }
 
-    void InitializeTube()
+    void InitializeTube(int length)
     {
         Vector3 P1 = transform.position;
         Vector3 P2 = P1 + new Vector3(5, Random.Range(-0.5f, 0.5f));
@@ -55,7 +52,7 @@ public class TubeGenerator : MonoBehaviour
 
         lastPoint = P4 + Vector3.right;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < length; i++)
         {
             ExtendMesh();
         }
@@ -63,7 +60,7 @@ public class TubeGenerator : MonoBehaviour
         GenerateTubeMesh();
     }
 
-    void ExtendMesh()
+    public void ExtendMesh()
     {
         Vector3 newPoint = GenerateNewPoint(lastPoint);
 
@@ -77,7 +74,7 @@ public class TubeGenerator : MonoBehaviour
 
         GenerateTubeMesh();
     }
-   
+
     Vector3 GenerateNewPoint(Vector3 aLastPoint)
     {
         Vector3 newPoint;
@@ -149,74 +146,51 @@ public class TubeGenerator : MonoBehaviour
         tube.GetComponent<MeshRenderer>().material = material;
 
     }
-    
 
-    
-    IEnumerator ExtendMeshAtInterval(float interval)
+    public int CropMesh(int points)
     {
-        while (gameRunning)
-        {
-            yield return new WaitForSeconds(interval);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            ExtendMesh();
-        }
+        Vector3[] pointss = bezier.GetCurvePoints();
+
+        int ind = player.GetComponent<player>().index;
+        int curvePointsRemoved= ((points + 1) / 4) *bezier.segments;
+
+        bezier.RemovePoints(0, points);
+        bezier.RegenerateCurvePoints();
+
+        player.GetComponent<player>().index -= curvePointsRemoved;
+
+        tube.GetComponent<Tube>().path = bezier.GetCurvePoints();
+
+        return curvePointsRemoved;
     }
 
-    IEnumerator CropMesh()
+    public Vector3 RecenterMesh()
     {
-        while (gameRunning)
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        List<Vector3> currentBezierPoints = new List<Vector3>(); //Temporarily store the points in an array
+        currentBezierPoints.AddRange(bezier.GetPoints());
+
+        Vector3 PlayerDistToOrigin = transform.position - (player.transform.position - player.GetComponent<player>().offsetFromCenter);
+
+        //Add the distance from player to origin(center) to every control point(not curve points)
+        for (int i = 0; i < currentBezierPoints.Count; i++)
         {
-            yield return new WaitForSeconds(20);
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            Vector3[] pointss = bezier.GetCurvePoints();
-            int ind = player.GetComponent<player>().index;
-            bezier.RemovePoints(0, 14);
-            bezier.RegenerateCurvePoints();
-
-            player.GetComponent<player>().index -= (15/4)*bezier.segments;
-            
-            Vector3[] pointss_1 = bezier.GetCurvePoints();
-            ind = player.GetComponent<player>().index;
-            tube.GetComponent<Tube>().path = bezier.GetCurvePoints();
-
-            GenerateTubeMesh();
+            currentBezierPoints[i] += PlayerDistToOrigin;
         }
-    }
+        //Set new points to bezier
+        bezier.SetPoints(currentBezierPoints);
+        bezier.RegenerateCurvePoints();
 
-    IEnumerator RecenterMesh()
-    {
-        while (gameRunning)
-        {
-            yield return new WaitForSeconds(25);
+        lastPoint = bezier.GetPoints()[bezier.GetPoints().Length - 1];
 
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position += PlayerDistToOrigin;
+        tube.GetComponent<Tube>().path = bezier.GetCurvePoints();
 
-            Vector3[] currentBezierPoints = bezier.GetPoints();
-
-            Vector3 PlayerDistToOrigin = -1 * (player.transform.position - player.GetComponent<player>().offsetFromCenter) - transform.position;
-
-            Vector3 DistToNextTargetLeft = player.GetComponent<player>().GetTargetPosition() - player.transform.position;
-
-            Vector3 PlayerTargetPos = player.GetComponent<player>().GetTargetPosition() + PlayerDistToOrigin;
-
-
-            for (int i = 0; i < currentBezierPoints.Length; i++)
-            {
-                currentBezierPoints[i] += PlayerDistToOrigin;
-            }
-
-            bezier.Intialize(currentBezierPoints[0], currentBezierPoints[1], currentBezierPoints[2], currentBezierPoints[3]);
-
-            for (int i = 4; i < currentBezierPoints.Length; i += 3)
-            {
-                bezier.AddPoint(currentBezierPoints[i]);
-            }
-            lastPoint = currentBezierPoints[currentBezierPoints.Length - 1];
-
-
-            player.transform.position = transform.position;
-            GenerateTubeMesh();
-        }
+        GenerateTubeMesh();
+        return PlayerDistToOrigin;
     }
 }

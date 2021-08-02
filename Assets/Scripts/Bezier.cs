@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bezier : MonoBehaviour
 {
-    [HideInInspector]
+    [HideInInspector]   
     List<Vector3> points;
     
     [HideInInspector]
@@ -123,6 +123,17 @@ public class Bezier : MonoBehaviour
         return curvePoints.ToArray();
     }
 
+    public void SetPoints(List<Vector3> aNewPoints)
+    {
+        if (aNewPoints.Count < 4) { Debug.LogError("Newpoints should have atleast 4 values"); }
+        else
+        {
+            points.Clear();
+            points = aNewPoints;
+        }
+
+    }
+
     public Vector3[] GetPoints()
     {
         return points.ToArray();
@@ -133,13 +144,17 @@ public class Bezier : MonoBehaviour
         points.RemoveAt(index);
     }
 
-    public void RemovePoints(int index,int count)
+    public void RemovePoints(int index, int count)
     {
-        points.RemoveRange(index, count);
+        if (count < points.Count && index < points.Count)
+        {
+            points.RemoveRange(index, count);
+        }
     }
 
     public void RemoveCurvePoints(int index, int count)
     {
         curvePoints.RemoveRange(index, count);
     }
+
 }
