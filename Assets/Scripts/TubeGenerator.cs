@@ -81,7 +81,7 @@ public class TubeGenerator : MonoBehaviour
 
         float displacement_y = 0;
         float displacement_z = 0;
-
+        
         displacement_y = Mathf.PerlinNoise(perlinMapPosition.x, perlinMapPosition.y);
         displacement_y *= Random.Range(0, 2) >= 1 ? 1 : -1;
 
