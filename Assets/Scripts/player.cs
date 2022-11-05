@@ -4,33 +4,25 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    MovementComponent m_movementComponent;
     [SerializeField]
     GameManager gameManager;
 
     [SerializeField]
     Tube tube;
-
-    [HideInInspector]
-    public int index = -1;
-
-    public float speed, rotSpeed;
-
-    float radiansFromPoint;
+    
 
     [HideInInspector]
     public Vector3 offsetFromCenter;
+
     Vector3 touchInitPos = Vector3.zero;
 
     Touch touch;
 
     void Start()
     {
-        GetComponent<Rigidbody>().isKinematic = true;
-
         tube = GameObject.FindGameObjectWithTag("Tube").GetComponent<Tube>();
-        radiansFromPoint = (3 * Mathf.PI) / 2;
-        offsetFromCenter = new Vector3(0, Mathf.Sin(radiansFromPoint), Mathf.Cos(radiansFromPoint));
-        RotateInsidePipe(0);
+        m_movementComponent = GetComponent<MovementComponent>();    
     }
 
     void Update()
@@ -39,51 +31,31 @@ public class player : MonoBehaviour
         {
             if (tube)
             {
-
+                if (GetComponent<Rigidbody>().velocity.magnitude > 14)
+                    m_movementComponent.SetMovementDirection(Vector3.right);
                 if (Input.GetAxisRaw("Horizontal") == -1)
                 {
-                    RotateInsidePipe(1);
+                    if (!m_movementComponent.IsInAir())
+                    {
+                        m_movementComponent.ApplyForce(Vector3.right, 5);
+                    }
+                    m_movementComponent.SetMovementDirection(Vector3.forward);
                 }
                 else if (Input.GetAxisRaw("Horizontal") == 1)
                 {
-                    RotateInsidePipe(-1);
+                    if (!m_movementComponent.IsInAir())
+                    {
+                        m_movementComponent.ApplyForce(Vector3.right, 5);
+                    }
+                    m_movementComponent.SetMovementDirection(Vector3.back);
                 }
 
                 TouchInput();
-
-                if (index >= tube.path.Length || index == -1)
-                {
-                    index = 1;
-                    transform.position = tube.path[0];
-                }
-
-                if ((tube.path[index] + offsetFromCenter).x - transform.position.x <= 0)
-                {
-                    index++;
-                }
-                else
-                {
-                    transform.position += speed * (((tube.path[index] + offsetFromCenter) - transform.position).normalized)*Time.deltaTime;
-                }
             }
         }
     }
 
-    void RotateInsidePipe(int dir)
-    {
-        Vector3 centerPos = transform.position - offsetFromCenter;
 
-        radiansFromPoint += (dir * rotSpeed*Time.deltaTime);
-        offsetFromCenter = new Vector3(0, Mathf.Sin(radiansFromPoint), Mathf.Cos(radiansFromPoint));
-        offsetFromCenter *= 0.8f;
-
-        transform.position = centerPos + offsetFromCenter;
-    }
-
-    public Vector3 GetTargetPosition()
-    {
-        return tube.path[index];
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -108,11 +80,9 @@ public class player : MonoBehaviour
             {
                 if (touch.position.x > touchInitPos.x + 1)
                 {
-                    RotateInsidePipe(-2);
                 }
                 else if (touch.position.x < touchInitPos.x - 1)
                 {
-                    RotateInsidePipe(2);
                 }
                 touchInitPos = touch.position;
             }
