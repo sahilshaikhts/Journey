@@ -8,6 +8,7 @@ TagManager:
   - Tube
   - boid
   - obstacle
+  - ramp
   layers:
   - Default
   - TransparentFX

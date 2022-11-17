@@ -62,7 +62,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             Vector3 offsetFromCenter;
 
-            offsetFromCenter = new Vector3(0, Random.Range(-1, 1), Random.Range(-10, 10));
+            offsetFromCenter = new Vector3(0, Random.Range(-2, -1.5f), Random.Range(-10, 10));
 
             position = tube.path[spawnIndex] + offsetFromCenter;
 

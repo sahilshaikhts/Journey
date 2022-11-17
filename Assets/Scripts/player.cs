@@ -31,22 +31,13 @@ public class player : MonoBehaviour
         {
             if (tube)
             {
-                if (GetComponent<Rigidbody>().velocity.magnitude > 14)
-                    m_movementComponent.SetMovementDirection(Vector3.right);
+                m_movementComponent.SetMovementDirection(Vector3.right);
                 if (Input.GetAxisRaw("Horizontal") == -1)
                 {
-                    if (!m_movementComponent.IsInAir())
-                    {
-                        m_movementComponent.ApplyForce(Vector3.right, 5);
-                    }
                     m_movementComponent.SetMovementDirection(Vector3.forward);
                 }
                 else if (Input.GetAxisRaw("Horizontal") == 1)
                 {
-                    if (!m_movementComponent.IsInAir())
-                    {
-                        m_movementComponent.ApplyForce(Vector3.right, 5);
-                    }
                     m_movementComponent.SetMovementDirection(Vector3.back);
                 }
 
@@ -59,9 +50,16 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "obstacle" && gameManager.gameState == GameManager.State.Running)
+        if (gameManager.gameState == GameManager.State.Running)
         {
-            gameManager.PlayerDied();
+            if (other.gameObject.tag == "obstacle")
+            {
+                gameManager.PlayerDied();
+            }
+            if (other.gameObject.tag == "ramp")
+            {
+                m_movementComponent.ApplyForce(Vector3.right, 2);
+            }
         }
     }
 

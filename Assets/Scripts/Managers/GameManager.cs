@@ -4,23 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Bezier be;
-    [SerializeField]
-    ObstacleSpawner obstacleSpawner;
+    [SerializeField] ObstacleSpawner obstacleSpawner;
+    [SerializeField] MountainGenerator tubeGenerator;
+    [SerializeField] UIManager uiManager;
 
-    [SerializeField]
-    TubeGenerator tubeGenerator;
-
-    [SerializeField]
-    UIManager uiManager;
-
-    [SerializeField]
-    GameObject player;
-
-    [SerializeField]
-    float moveSpeed;
-    [SerializeField]
-    float rotSpeed;
+    [SerializeField] float moveSpeed;
 
     public enum State
     {
@@ -34,24 +22,24 @@ public class GameManager : MonoBehaviour
     public State gameState;
 
     public float distanceTravelled = 0;
-    
+
     public int highScore;
-    public int timesSpawned=0;
+    public int timesSpawned = 0;
 
     float timeSinceLastWave;
     void Start()
     {
         gameState = State.Running;
-        
 
-        tubeGenerator.Initialize(100);
-        obstacleSpawner.Initialize(1);
 
-        StartCoroutine(ExtendTube(.5f));
-       // StartCoroutine(CropTube(20));
-       // StartCoroutine(RecenterTube(25));
+        tubeGenerator.Initialize(150);
+        obstacleSpawner.Initialize(10);
 
-        StartCoroutine(SpawnObstacle(2));
+        StartCoroutine(ExtendTube(.4f));
+        //StartCoroutine(CropTube(5));
+        //StartCoroutine(RecenterTube(15));
+
+        StartCoroutine(SpawnObstacle(1));
     }
 
     private void FixedUpdate()
@@ -69,8 +57,6 @@ public class GameManager : MonoBehaviour
             if (timeSinceLastWave + 8 < Time.time)
             {
                 moveSpeed += 0.2f;
-                rotSpeed += 0.02f;
-
                 timeSinceLastWave = Time.time;
             }
         }
@@ -83,8 +69,8 @@ public class GameManager : MonoBehaviour
         while (gameState != State.Over)
         {
             yield return new WaitForSeconds(interval);
-            if(gameState==State.Running)
-            tubeGenerator.ExtendMesh();
+            if (gameState == State.Running)
+                tubeGenerator.ExtendMesh();
         }
     }
 
@@ -125,7 +111,7 @@ public class GameManager : MonoBehaviour
 
             if (gameState == State.Running)
             {
-                if(timesSpawned>=3)
+                if (timesSpawned >= 3)
                 {
                     yield return StartCoroutine(DeSpawnObstacle());
                     timesSpawned = 0;
@@ -159,9 +145,6 @@ public class GameManager : MonoBehaviour
 
     public void UnPause()
     {
-        if (player)
-        {
-        }
     }
 
     public void PlayerDied()

@@ -15,7 +15,8 @@ public class MovementComponent : MonoBehaviour
 
     [SerializeField] private float m_speed, m_maxSpeed;
     [SerializeField] private float m_jumpSpeed;
-
+    [SerializeField]
+    [Range(0, 1)] float m_inAirControl;
     [SerializeField] private float m_gravityAccelaration;
     [SerializeField] private float m_turnSpeed;
     [SerializeField] private float m_friction;
@@ -56,7 +57,7 @@ public class MovementComponent : MonoBehaviour
         if (!onGround)
         {
             Vector3 movDirection = m_inputDirection+ m_additionalForce.normalized;
-            movDirection *= m_speed + m_additionalForce.magnitude;
+            movDirection *= m_speed * m_inAirControl + m_additionalForce.magnitude;
 
             newVelocity += movDirection * Time.fixedDeltaTime;
             newVelocity = Vector3.ClampMagnitude(newVelocity, m_maxSpeed+ m_additionalForce.magnitude);
@@ -79,7 +80,7 @@ public class MovementComponent : MonoBehaviour
             movDirection = groundTangent;
 
             Vector3 velAlongMoveDir = Vector3.Project(newVelocity, movDirection);
-
+            velAlongMoveDir *= 2;
             if (Vector3.Dot(velAlongMoveDir, movDirection) > 0.0f)
             {
                 newVelocity = Vector3.Lerp(newVelocity, velAlongMoveDir, m_turnSpeed * Time.fixedDeltaTime);
@@ -199,7 +200,7 @@ public class MovementComponent : MonoBehaviour
 
     public void Jump() { doJump = true; }
 
-    public bool IsInAir() => onGround;
+    public bool IsOnGround() => onGround;
 
     void MoveHandler(Vector3 direction) { SetMovementDirection(direction); }
 }
