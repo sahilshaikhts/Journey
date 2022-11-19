@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] ObstacleSpawner obstacleSpawner;
-    [SerializeField] MountainGenerator tubeGenerator;
+    [SerializeField] Spawner_environment m_spawner_enviornment;
+    [SerializeField] MountainGenerator m_mountainGenerator;
     [SerializeField] UIManager uiManager;
 
     [SerializeField] float moveSpeed;
@@ -32,14 +32,14 @@ public class GameManager : MonoBehaviour
         gameState = State.Running;
 
 
-        tubeGenerator.Initialize(150);
-        obstacleSpawner.Initialize(10);
+        m_mountainGenerator.Initialize(150);
+        //  m_spawner_enviornment.Initialize(15);
 
-        StartCoroutine(ExtendTube(.4f));
-        //StartCoroutine(CropTube(5));
-        //StartCoroutine(RecenterTube(15));
+        StartCoroutine(ExtendMountain(.4f));
+        //StartCoroutine(CropMountainMesh(5));
+        //StartCoroutine(RecenterMountain(15));
+        //StartCoroutine(SpawnEnvironment(.4f));
 
-        StartCoroutine(SpawnObstacle(1));
     }
 
     private void FixedUpdate()
@@ -63,18 +63,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    IEnumerator ExtendTube(float interval)
+    IEnumerator ExtendMountain(float interval)
     {
 
         while (gameState != State.Over)
         {
             yield return new WaitForSeconds(interval);
             if (gameState == State.Running)
-                tubeGenerator.ExtendMesh();
+                m_mountainGenerator.ExtendMesh();
         }
     }
 
-    IEnumerator CropTube(float interval)
+    IEnumerator CropMountainMesh(float interval)
     {
 
         while (gameState != State.Over)
@@ -82,27 +82,25 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(interval);
             if (gameState == State.Running)
             {
-                int pointsRemoved = tubeGenerator.CropMesh(14);
-
-                obstacleSpawner.OnCurvePointsRemoved(pointsRemoved);
+                int pointsRemoved = m_mountainGenerator.CropMesh(14);
             }
         }
     }
 
-    IEnumerator RecenterTube(float interval)
+    IEnumerator RecenterMountain(float interval)
     {
         while (gameState != State.Over)
         {
             yield return new WaitForSeconds(interval);
             if (gameState == State.Running)
             {
-                Vector3 distance = tubeGenerator.RecenterMesh();
+                Vector3 distance = m_mountainGenerator.RecenterMesh();
                 RecenterObstacles(distance);
             }
         }
     }
 
-    IEnumerator SpawnObstacle(float interval)
+    IEnumerator SpawnEnvironment(float interval)
     {
 
         while (gameState == State.Running)
@@ -116,7 +114,7 @@ public class GameManager : MonoBehaviour
                     yield return StartCoroutine(DeSpawnObstacle());
                     timesSpawned = 0;
                 }
-                obstacleSpawner.SpawnObstacle();
+                //m_spawner_enviornment.Spawn();
                 timesSpawned++;
             }
         }
@@ -126,7 +124,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == State.Running)
         {
-            obstacleSpawner.DeSpawnObstacle();
+            m_spawner_enviornment.DeSpawnObstacle();
         }
 
         yield return new WaitForEndOfFrame();
@@ -134,7 +132,6 @@ public class GameManager : MonoBehaviour
 
     void RecenterObstacles(Vector3 distance)
     {
-        obstacleSpawner.ReCenter(distance);
     }
 
     void GameOver()

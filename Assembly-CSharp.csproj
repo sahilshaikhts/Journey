@@ -56,9 +56,11 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Procedural Generation\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\Procedural Generation\MountainGenerator.cs" />
+    <Compile Include="Assets\Scripts\Procedural Generation\Spawner\Spawner_obstacle.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\PerlinNoiseGenerator.cs" />
+    <Compile Include="Assets\Scripts\Procedural Generation\Spawner\Spawner_environment.cs" />
     <Compile Include="Assets\Scripts\MovementComponent.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\Procedural Generation\Tube.cs" />
@@ -67,7 +69,6 @@
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Misc\Bezier\Bezier.cs" />
     <Compile Include="Assets\Scripts\Misc\ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\PerlinNoiseGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

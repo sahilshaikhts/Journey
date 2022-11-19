@@ -72,9 +72,14 @@ public class MountainGenerator : MonoBehaviour
     Vector3 GenerateNewPoint(Vector3 aLastPoint)
     {
         float displacement_y= m_noiseGenerator.GenerateValue(m_perlinMapPosition);
-        
-        //offset value to be in the range -1 to 1.
-        
+
+       ////add "terrace" WIP ,figre it out
+       //float W = 0.2f; // width of terracing bands
+       //float k = Mathf.Floor(displacement_y / W);
+       //float f = (displacement_y - k * W) / W;
+       //float s = Mathf.Min(2 * f, 1.0f);
+       // displacement_y = (k + s) * W;
+       
         displacement_y *= m_terrainHeight;
 
         m_perlinMapPosition += Vector2.one;

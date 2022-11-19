@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public struct ObjectPool
+public class ObjectPool
 {
-    private GameObject prefab;
+    private GameObject m_prefab;
 
-    private GameObject[] pool_Objects;
+    private GameObject[] m_spawned_objects;
     
     int lastIndex;//points to the element that was last pulled and activated(end index for active objects (0..lastIndex))
 
     public void Initialize(GameObject aPrefab, int aCount)
     {
-        prefab = aPrefab;
+        m_prefab = aPrefab;
 
-        pool_Objects = new GameObject[aCount];
+        m_spawned_objects = new GameObject[aCount];
 
         lastIndex = -1;
 
@@ -22,19 +20,19 @@ public struct ObjectPool
         {
             GameObject obj = MonoBehaviour.Instantiate(aPrefab);
             obj.SetActive(false);
-            pool_Objects[i] = obj;
+            m_spawned_objects[i] = obj;
         }
     }
 
     public GameObject PullObjectFromPool()
     {
         //Shift the lastIndex by one and return that element in the array to activate the gameObject
-        if (lastIndex < pool_Objects.Length - 1)
+        if (lastIndex < m_spawned_objects.Length - 1)
         {
             
             lastIndex++;
          
-            return pool_Objects[lastIndex];
+            return m_spawned_objects[lastIndex];
         }
         else
             return null;
@@ -50,20 +48,20 @@ public struct ObjectPool
             //store the list of objects in a temporary array of GOs
             for (int i = 0; i < count; i++)
             {
-                requestedObjects[i] = pool_Objects[i];
+                requestedObjects[i] = m_spawned_objects[i];
                 requestedObjects[i].SetActive(false);
             }
 
             //move the acttive GOs that are not requested to be deactivated to the top 
             for (int i = count, k = 0; i < lastIndex; i++, k++)
             {
-                pool_Objects[k] = pool_Objects[i];
+                m_spawned_objects[k] = m_spawned_objects[i];
             }
 
             //copy the store GOs that were requested above the last index
             for (int i = lastIndex - count, k = 0; i < lastIndex; i++, k++)
             {
-                pool_Objects[i] = requestedObjects[k];
+                m_spawned_objects[i] = requestedObjects[k];
             }
 
             lastIndex -= count;
@@ -77,14 +75,14 @@ public struct ObjectPool
         {
             //find the requested object and swap it with the object before the lastindex and then move the lastIndex by -1
 
-            if (pool_Objects[i] == aObject)
+            if (m_spawned_objects[i] == aObject)
             {
-                GameObject swapObj = pool_Objects[i];
+                GameObject swapObj = m_spawned_objects[i];
 
                 swapObj.SetActive(false);
 
-                pool_Objects[i] = pool_Objects[lastIndex];
-                pool_Objects[lastIndex] = swapObj;
+                m_spawned_objects[i] = m_spawned_objects[lastIndex];
+                m_spawned_objects[lastIndex] = swapObj;
 
                 lastIndex--;
              
@@ -116,7 +114,7 @@ public struct ObjectPool
         GameObject[] enabledObj=new GameObject[lastIndex+1];
         for (int i = 0; i <= lastIndex; i++)
         {
-            enabledObj[i] = pool_Objects[i];
+            enabledObj[i] = m_spawned_objects[i];
         }
 
         return enabledObj;
@@ -124,10 +122,10 @@ public struct ObjectPool
 
     public GameObject[] GetObjects()
     {
-        GameObject[] enabledObj = new GameObject[pool_Objects.Length];
-        for (int i = 0; i < pool_Objects.Length; i++)
+        GameObject[] enabledObj = new GameObject[m_spawned_objects.Length];
+        for (int i = 0; i < m_spawned_objects.Length; i++)
         {
-            enabledObj[i] = pool_Objects[i];
+            enabledObj[i] = m_spawned_objects[i];
         }
 
         return enabledObj;
@@ -135,7 +133,7 @@ public struct ObjectPool
 
     public int GetTotalCount()
     {
-        return pool_Objects.Length;
+        return m_spawned_objects.Length;
     }
 
     public int GetActiveObjectCount()

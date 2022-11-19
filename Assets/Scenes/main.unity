@@ -888,7 +888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 29.082, y: 70, z: 0}
 --- !u!1 &385528796
 GameObject:
@@ -7859,7 +7859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381843837}
-  - component: {fileID: 1381843836}
+  - component: {fileID: 1381843838}
   m_Layer: 7
   m_Name: Obstacle spawner
   m_TagString: Untagged
@@ -7867,24 +7867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1381843836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381843835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aca25f3f7a4e443a4dc71a25774540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneManager: {fileID: 1630192752}
-  prfb_obstacle:
-  - {fileID: 2578722853796907826, guid: 77c9f5cbe4bc88e4bb4d432224d2877d, type: 3}
-  obstacleSpawnWeights: 64000000
-  tube: {fileID: 2141921170}
-  player: {fileID: 2043862308}
 --- !u!4 &1381843837
 Transform:
   m_ObjectHideFlags: 0
@@ -7898,8 +7880,26 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1381843838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381843835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea45d1cb4ca9db74b88a6e9cbe87046a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneManager: {fileID: 0}
+  prfb_obstacle:
+  - {fileID: 0}
+  obstacleSpawnWeights: 
+  tube: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1506010848
 GameObject:
   m_ObjectHideFlags: 0
@@ -7930,16 +7930,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mountain: {fileID: 2141921167}
-  width: 15
+  width: 30
   segments: 2
   m_terrainHeight: 5
   bezier: {fileID: 1827565342}
   m_noiseGenerator:
     m_octaves:
-    - Amplitude: 2
-      Frequency: 0.001
     - Amplitude: 5
       Frequency: 0.01
+    - Amplitude: 0.1
+      Frequency: 0.02
+    - Amplitude: 15
+      Frequency: 0.07
   material: {fileID: 2100000, guid: 943fd52b029cc644a975474408af416e, type: 2}
 --- !u!4 &1506010850
 Transform:
@@ -7954,7 +7956,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517771837
 GameObject:
@@ -8062,7 +8064,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1528916854
 MonoBehaviour:
@@ -8111,8 +8113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddb85ad8e348b948abd65b4bd05d1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpawner: {fileID: 1381843836}
-  tubeGenerator: {fileID: 1506010849}
+  m_spawner_enviornment: {fileID: 1766833830}
+  m_mountainGenerator: {fileID: 1506010849}
   uiManager: {fileID: 1528916854}
   moveSpeed: 5
   gameState: 3
@@ -8324,7 +8326,7 @@ RectTransform:
   m_Children:
   - {fileID: 1326282719}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8396,7 +8398,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736921989
 GameObject:
@@ -8493,7 +8495,7 @@ RectTransform:
   - {fileID: 1249342548}
   - {fileID: 510968740}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8520,6 +8522,60 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!1 &1766833828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766833829}
+  - component: {fileID: 1766833830}
+  m_Layer: 0
+  m_Name: Spawner_environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1766833829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766833828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1766833830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766833828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d857e1608e0ed43ae447c59e2bc567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_props:
+  - prefab: {fileID: 0}
+    offset:
+      min: {x: 0, y: 0, z: 0}
+      max: {x: 0, y: 0, z: 0}
+    quantity:
+      min: 0
+      max: 0
+    spawnInSeries: 0
+    distanceBetween: {x: 0, y: 0, z: 0}
 --- !u!1 &1827565341
 GameObject:
   m_ObjectHideFlags: 0
@@ -8564,7 +8620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860178989
 GameObject:
@@ -9232,7 +9288,7 @@ Transform:
   - {fileID: 1962124473}
   - {fileID: 919494656}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2043862311
 Rigidbody:
@@ -9371,7 +9427,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2141921172
 MeshCollider:

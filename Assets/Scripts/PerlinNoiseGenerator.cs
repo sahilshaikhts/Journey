@@ -36,8 +36,10 @@ namespace Sahil.Perlin
                 
                 totalAmplitutde+= m_octaves[i].Amplitude;
             }
+
             value/=totalAmplitutde;
             value = (value * 2) - 1;   
+
             return value;
         }
 
