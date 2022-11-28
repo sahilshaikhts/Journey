@@ -57,10 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Procedural Generation\MountainGenerator.cs" />
-    <Compile Include="Assets\Scripts\Procedural Generation\Spawner\Spawner_obstacle.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Spawner_obstacle.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\PerlinNoiseGenerator.cs" />
-    <Compile Include="Assets\Scripts\Procedural Generation\Spawner\Spawner_environment.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Base\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Spawner_sequence.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DataStrucutures.cs" />
     <Compile Include="Assets\Scripts\MovementComponent.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\Procedural Generation\Tube.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Misc\Bezier\Bezier.cs" />
+    <Compile Include="Assets\Scripts\Managers\SpawnerManager.cs" />
     <Compile Include="Assets\Scripts\Misc\ObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>

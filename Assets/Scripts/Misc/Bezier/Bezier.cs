@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Bezier : MonoBehaviour
 {
-    [HideInInspector]   
     List<Vector3> points;
     
-    [HideInInspector]
     List<Vector3> curvePoints;
     
-    [HideInInspector]
     public int segments;
     
     public bool GizmosOn=true;
@@ -93,13 +90,6 @@ public class Bezier : MonoBehaviour
         }
     }
 
-    Vector3 GetQuadraticPoint(Vector3 P1, Vector3 P2, Vector3 P3, float percent)
-    {
-        Vector3 point = GetLinearPoint(GetLinearPoint(P1, P2, percent), GetLinearPoint(P2, P3, percent), percent);
-
-        return point;
-    } 
-    
     Vector3 GetCubicPoint(Vector3 P1, Vector3 P2, Vector3 P3,Vector2 P4, float percent)
     {
         Vector3 curve_1 = GetLinearPoint(GetLinearPoint(P1, P2, percent), GetLinearPoint(P2, P3, percent), percent);

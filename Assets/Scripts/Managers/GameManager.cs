@@ -1,12 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Spawner_environment m_spawner_enviornment;
+    [SerializeField] SpawnerManager m_spawnerManager;
     [SerializeField] MountainGenerator m_mountainGenerator;
     [SerializeField] UIManager uiManager;
+
+    [SerializeField] float m_spawnChunkSize;//size of terrain to be generated every time
 
     [SerializeField] float moveSpeed;
 
@@ -31,15 +32,10 @@ public class GameManager : MonoBehaviour
     {
         gameState = State.Running;
 
+        m_mountainGenerator.Initialize(150, m_spawnChunkSize);
 
-        m_mountainGenerator.Initialize(150);
-        //  m_spawner_enviornment.Initialize(15);
-
-        StartCoroutine(ExtendMountain(.4f));
-        //StartCoroutine(CropMountainMesh(5));
-        //StartCoroutine(RecenterMountain(15));
-        //StartCoroutine(SpawnEnvironment(.4f));
-
+        StartCoroutine(ExtendMountain(1));
+        StartCoroutine(SpawnEnvironment(.4f));
     }
 
     private void FixedUpdate()
@@ -70,13 +66,14 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(interval);
             if (gameState == State.Running)
-                m_mountainGenerator.ExtendMesh();
+            {
+                m_mountainGenerator.ExtendMesh(m_spawnChunkSize);
+            }
         }
     }
 
     IEnumerator CropMountainMesh(float interval)
     {
-
         while (gameState != State.Over)
         {
             yield return new WaitForSeconds(interval);
@@ -109,13 +106,8 @@ public class GameManager : MonoBehaviour
 
             if (gameState == State.Running)
             {
-                if (timesSpawned >= 3)
-                {
-                    yield return StartCoroutine(DeSpawnObstacle());
-                    timesSpawned = 0;
-                }
-                //m_spawner_enviornment.Spawn();
-                timesSpawned++;
+
+                //m_spawnerManager.SpawnLandscapes();
             }
         }
     }
@@ -124,7 +116,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == State.Running)
         {
-            m_spawner_enviornment.DeSpawnObstacle();
         }
 
         yield return new WaitForEndOfFrame();
