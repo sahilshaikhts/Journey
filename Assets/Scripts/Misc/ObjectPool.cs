@@ -29,7 +29,6 @@ public class ObjectPool
         //Shift the lastIndex by one and return that element in the array to activate the gameObject
         if (lastIndex < m_spawned_objects.Length - 1)
         {
-            
             lastIndex++;
          
             return m_spawned_objects[lastIndex];
@@ -39,7 +38,7 @@ public class ObjectPool
 
     }
 
-    public void DeactivateObjects(int count)        //Sort the pool_object and point to the new avaiblable object
+    public GameObject[] DeSpawnObjects(int count)        //Sort the pool_object and point to the new avaiblable object
     {
         if (count > 0)
         {
@@ -51,25 +50,25 @@ public class ObjectPool
                 requestedObjects[i] = m_spawned_objects[i];
                 requestedObjects[i].SetActive(false);
             }
-
-            //move the acttive GOs that are not requested to be deactivated to the top 
-            for (int i = count, k = 0; i < lastIndex; i++, k++)
+          
+            //Shift the GOs that were not requested to be deactivated to the top 
+            for (int i = count, k = 0; i < m_spawned_objects.Length; i++, k++)
             {
                 m_spawned_objects[k] = m_spawned_objects[i];
             }
-
-            //copy the store GOs that were requested above the last index
-            for (int i = lastIndex - count, k = 0; i < lastIndex; i++, k++)
+            //Move the stored GOs that were requested at the bottom of the array.
+            for (int i = m_spawned_objects.Length-count, k = 0; i < m_spawned_objects.Length; i++, k++)
             {
                 m_spawned_objects[i] = requestedObjects[k];
             }
 
             lastIndex -= count;
+            return requestedObjects;
         }
-
+        return null;
     }
 
-    public void DeactivateObject(GameObject aObject)        //Find the requested object in the active region of the array and deactivates it 
+    public void DeSpawnObject(GameObject aObject)        //Find the requested object in the active region of the array and deactivates it 
     {
         for (int i = 0; i < lastIndex; i++)
         {
@@ -109,6 +108,13 @@ public class ObjectPool
         return obj;
     }
 
+    public GameObject GetLastSpawnObject()
+    {
+        if (lastIndex!=-1)
+            return m_spawned_objects[lastIndex].gameObject;
+        else
+            return null;
+    }
     public GameObject[] GetActiveObjects()
     {
         GameObject[] enabledObj=new GameObject[lastIndex+1];
@@ -140,4 +146,6 @@ public class ObjectPool
     {
         return lastIndex;
     }
+
+    public bool IsObjectAvailableToSpawn() => lastIndex != m_spawned_objects.Length - 1;
 }

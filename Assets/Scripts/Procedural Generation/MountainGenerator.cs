@@ -24,23 +24,21 @@ public class MountainGenerator : MonoBehaviour
 
     List<Vector3> m_vertices = new List<Vector3>();
 
-    public void Initialize(int meshInitLength, float aExtendDistance)
+    public void Initialize(int aSeed)
     {
-        m_noiseGenerator.SetSeed(Random.Range(0,1000));
+        m_noiseGenerator.SetSeed(aSeed);
 
-        InitializeMountain(meshInitLength,aExtendDistance);
+        InitializeMountain();
      
         m_mountain_Renderer.material = m_mountain_material;
     }
 
-    void InitializeMountain(int length,float aExtendDistance)
+    void InitializeMountain()
     {
-        float increment= aExtendDistance / m_mesh_segments;
-
-        Vector3 P1 = GenerateNewPoint(transform.position, increment);
-        Vector3 P2 = GenerateNewPoint(P1, increment);
-        Vector3 P3 = GenerateNewPoint(P2, increment);
-        Vector3 P4 = GenerateNewPoint(P3, increment);
+        Vector3 P1 = GenerateNewPoint(transform.position);
+        Vector3 P2 = GenerateNewPoint(P1);
+        Vector3 P3 = GenerateNewPoint(P2);
+        Vector3 P4 = GenerateNewPoint(P3);
 
         m_bezier.Intialize(P1, P2, P3, P4);
 
@@ -49,25 +47,29 @@ public class MountainGenerator : MonoBehaviour
         GenerateTubeMesh();
     }
 
-    public Vector3 ExtendMesh(float aExtendDistance)
+    public Vector3[] ExtendMesh(float aExtendDistance)
     {
-        Vector3 newPoint;
-        float increment = aExtendDistance / 5;
+        int steps = (int)aExtendDistance / 5;
 
-        for (float i = 0; i < increment; i++)
+        Vector3 newPoint;
+        Vector3[] newBezeierPoints=new Vector3[steps];
+
+        for (int i = 0; i < steps; i++)
         {
-            newPoint = GenerateNewPoint(lastPoint, increment);
+            newPoint = GenerateNewPoint(lastPoint);
 
             m_bezier.AddPoint(newPoint);
+            newBezeierPoints[i]=newPoint;
+
             lastPoint = newPoint;
         }
 
         GenerateTubeMesh();
 
-        return lastPoint;
+        return newBezeierPoints;
     }
 
-    Vector3 GenerateNewPoint(Vector3 aLastPoint, float aIncrement)
+    Vector3 GenerateNewPoint(Vector3 aLastPoint)
     {
         float displacement_y= m_noiseGenerator.GenerateValue(m_perlinMapPosition);
 
@@ -79,7 +81,7 @@ public class MountainGenerator : MonoBehaviour
        // displacement_y = (k + s) * W;
        
         displacement_y *= m_mountain_heightMultiplier;
-
+        //this might not be right,as pos increastes 1% of the position shrinks/grows ()
         m_perlinMapPosition += Vector2.one;
         
         return aLastPoint + new Vector3(5, displacement_y, 0);
@@ -142,29 +144,30 @@ public class MountainGenerator : MonoBehaviour
 
     public Vector3 RecenterMesh()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        return Vector3.zero;
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        List<Vector3> currentBezierPoints = new List<Vector3>(); //Temporarily store the points in an array
-        currentBezierPoints.AddRange(m_bezier.GetPoints());
+        //List<Vector3> currentBezierPoints = new List<Vector3>(); //Temporarily store the points in an array
+        //currentBezierPoints.AddRange(m_bezier.GetPoints());
 
-        Vector3 PlayerDistToOrigin = transform.position - (player.transform.position - player.GetComponent<player>().offsetFromCenter);
+        //Vector3 PlayerDistToOrigin = transform.position - (player.transform.position - player.GetComponent<player>().offsetFromCenter);
 
-        //Add the distance from player to origin(center) to every control point(not curve points)
-        for (int i = 0; i < currentBezierPoints.Count; i++)
-        {
-            currentBezierPoints[i] += PlayerDistToOrigin;
-        }
-        //Set new points to m_bezier
-        m_bezier.SetPoints(currentBezierPoints);
-        m_bezier.RegenerateCurvePoints();
+        ////Add the distance from player to origin(center) to every control point(not curve points)
+        //for (int i = 0; i < currentBezierPoints.Count; i++)
+        //{
+        //    currentBezierPoints[i] += PlayerDistToOrigin;
+        //}
+        ////Set new points to m_bezier
+        //m_bezier.SetPoints(currentBezierPoints);
+        //m_bezier.RegenerateCurvePoints();
 
-        lastPoint = m_bezier.GetPoints()[m_bezier.GetPoints().Length - 1];
+        //lastPoint = m_bezier.GetPoints()[m_bezier.GetPoints().Length - 1];
 
-        player.transform.position += PlayerDistToOrigin;
-        //m_mountain.GetComponent<Tube>().path = m_bezier.GetCurvePoints();
+        //player.transform.position += PlayerDistToOrigin;
+        ////m_mountain.GetComponent<Tube>().path = m_bezier.GetCurvePoints();
 
-        GenerateTubeMesh();
-        return PlayerDistToOrigin;
+        //GenerateTubeMesh();
+        //return PlayerDistToOrigin;
     } 
 }
 

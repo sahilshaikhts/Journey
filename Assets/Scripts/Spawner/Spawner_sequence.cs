@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.MaterialProperty;
 
 namespace Sahil
 {
@@ -10,30 +12,23 @@ namespace Sahil
         /// <summary>
         /// Origin of each prop in the prop list.
         /// </summary>
-        [SerializeField] Vector3[] m_propOrigin;
-        Vector3[] m_lastSpawnPosition;//Array of positions of the last spawned gameobject of each type.
-
-        Quaternion[] m_lastSpawnRotation;//Array of rotations of the last spawned gameobject of each type.
-
         public new void Initialize()
         {
-            if (m_propOrigin.Length != m_props.Length) Debug.LogError("Missing prop spawn origin.(Need to enter atleast default Vector3(0,0,0))");
-            m_lastSpawnPosition = m_propOrigin;
-            m_lastSpawnRotation = new Quaternion[m_props.Length];
-
             base.Initialize();
         }
 
         public void SpawnAll()
         {
+            string propType;
             for (int i = 0; i < m_props.Length; i++)
             {
-                GameObject obj = SpawnObject(i);
-                obj.transform.position = m_lastSpawnPosition[i] + m_lastSpawnRotation[i] * Vector3.forward * m_props[i].GetSpaceBetween().z;
-                obj.transform.rotation = m_lastSpawnRotation[i];
+                propType = m_props[i].GetPropName();
+                GameObject obj = SpawnObject(propType);
 
-                m_lastSpawnPosition[i] = obj.transform.position;
-                m_lastSpawnRotation[i] = obj.transform.rotation;
+                obj.transform.position = (Vector3)GetLastSpawnedPropPosition(propType) + ((Quaternion)GetLastSpawnedPropRotation(propType) * Vector3.forward);
+                obj.transform.position *= m_props[i].GetSpaceBetween().z;
+
+                obj.transform.rotation = (Quaternion)GetLastSpawnedPropRotation(propType);
             }
         }
 
@@ -43,14 +38,16 @@ namespace Sahil
         /// <param name="aSpawnDirection"> Direction of the new object from the last spawned prop.</param>
         public void SpawnAll(Vector3 aSpawnDirection)
         {
+            string propType;
             for (int i = 0; i < m_props.Length; i++)
             {
-                GameObject obj = SpawnObject(i);
-                obj.transform.position = m_lastSpawnPosition[i] + aSpawnDirection * m_props[i].GetSpaceBetween().z;
-                obj.transform.rotation = m_lastSpawnRotation[i];
+                propType = m_props[i].GetPropName();
+                GameObject obj = SpawnObject(propType);
 
-                m_lastSpawnPosition[i] = obj.transform.position;
-                m_lastSpawnRotation[i] = obj.transform.rotation;
+                obj.transform.position = (Vector3)GetLastSpawnedPropPosition(propType) + aSpawnDirection;
+                obj.transform.position *= m_props[i].GetSpaceBetween().z;
+
+                obj.transform.rotation = (Quaternion)GetLastSpawnedPropRotation(propType);
             }
         }
 
@@ -59,17 +56,22 @@ namespace Sahil
         /// </summary>
         /// <param name="aSpawnDirection"> Direction of the new object from the last spawned prop.</param>
         /// <param name="aRotation">Rotation of the new prop.If not set ,rotation will be same as the last spawned prop.</param>
-        public void SpawnProp(string aGameObjectName, Vector3 aSpawnDirection, Quaternion aRotation)
+        public void SpawnProp(string aGameObjectName, Vector3 aSpawnPosition, Quaternion aRotation)
         {
-            for (int i = 0; i < m_props.Length; i++)
-            {
-                GameObject obj = SpawnObject(i);
-                obj.transform.position = m_lastSpawnPosition[i] + aSpawnDirection * m_props[i].GetSpaceBetween().z;
-                obj.transform.rotation = aRotation;
+            Vector3? lastSpawnPosition = GetLastSpawnedPropPosition(aGameObjectName);
+            Prop prop = GetPropByName(aGameObjectName);
 
-                m_lastSpawnPosition[i] = obj.transform.position;
-                m_lastSpawnRotation[i] = obj.transform.rotation;
+            if (lastSpawnPosition.HasValue)
+            {
+                if (Mathf.Abs(lastSpawnPosition.Value.x - aSpawnPosition.x)<prop.GetSpaceBetween().z) return;
             }
+
+            GameObject obj = SpawnObject(aGameObjectName);
+
+            if (obj == null) Debug.Log("No available objects in pool");
+            
+            obj.transform.position = aSpawnPosition + prop.GetOffset();
+            obj.transform.rotation = aRotation;
         }
     }
 }

@@ -101,7 +101,7 @@ public class Spawner_obstacle : MonoBehaviour
             {
                 if (activeObst[k].transform.position.x < player.transform.position.x - 2)
                 {
-                   obstacle[i].DeactivateObject(activeObst[k]);
+                  // obstacle[i].DeactivateObject(activeObst[k]);
                 }
 
             }

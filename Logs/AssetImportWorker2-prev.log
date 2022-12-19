@@ -1,0 +1,826 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 16291 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/UnityProject/PG_1
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+57365
+Successfully changed project path to: D:/UnityProject/PG_1
+D:/UnityProject/PG_1
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 52.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.0f1 (6eacc8284459)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/UnityProject/PG_1/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Vendor:   NVIDIA
+    VRAM:     5980 MB
+    Driver:   31.0.15.1700
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016357 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 50.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.057 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1058ms)
+		BeginReloadAssembly (119ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (737ms)
+			LoadAssemblies (115ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (194ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (413ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (109ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (50ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (171ms)
+				ProcessInitializeOnLoadMethodAttributes (79ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002402 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.641 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1642ms)
+		BeginReloadAssembly (303ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (136ms)
+		EndReloadAssembly (1127ms)
+			LoadAssemblies (150ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (288ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (91ms)
+			SetupLoadedEditorAssemblies (540ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (29ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (362ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.32 seconds
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1777 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (1.3 MB). Loaded Objects now: 2276.
+Memory consumption went from 180.1 MB to 178.8 MB.
+Total: 4.081600 ms (FindLiveObjects: 0.244900 ms CreateObjectMapping: 0.234200 ms MarkObjects: 3.295200 ms  DeleteObjects: 0.305700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 215995.339284 seconds.
+  path: Assets/FBX format/tree_tall_dark.fbx
+  artifactKey: Guid(e9a115598c22a0f4a9ee63c9f6642ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_tall_dark.fbx using Guid(e9a115598c22a0f4a9ee63c9f6642ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df94c794a0f2947ddaa5e21028d516c') in 0.320836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/FBX format/cliff_block_rock.fbx
+  artifactKey: Guid(01a5b6eda0ceb5546a4f7051527a748f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_block_rock.fbx using Guid(01a5b6eda0ceb5546a4f7051527a748f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15c398ce20526faae5cceb064683ff8') in 0.048362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/FBX format/mushroom_tan.fbx
+  artifactKey: Guid(aeed6b92d2ad0414b90000242bed3a6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/mushroom_tan.fbx using Guid(aeed6b92d2ad0414b90000242bed3a6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59ff6c065087923188099dca62e1066f') in 0.053068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FBX format/bridge_center_stoneRound.fbx
+  artifactKey: Guid(9cfe23ae3a4221e47aecf65bc2a83e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_center_stoneRound.fbx using Guid(9cfe23ae3a4221e47aecf65bc2a83e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0f72048bb2bfcc65c1da3f92f3bfe9d') in 0.049723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FBX format/tree_pineTallD_detailed.fbx
+  artifactKey: Guid(abd57d41d56ce104eb62fe5ee49b8174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_pineTallD_detailed.fbx using Guid(abd57d41d56ce104eb62fe5ee49b8174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f6b8d1bd36facd753251cc97887478') in 0.046101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FBX format/plant_flatTall.fbx
+  artifactKey: Guid(2926ed4cca22a6d45afab94e002f0324) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/plant_flatTall.fbx using Guid(2926ed4cca22a6d45afab94e002f0324) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e21922a4997ba6f2962df23107eecc') in 0.032011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/plant_flatShort.fbx
+  artifactKey: Guid(1d13161bc3d8bb04c9d58335fc433e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/plant_flatShort.fbx using Guid(1d13161bc3d8bb04c9d58335fc433e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eb9899af4a3d02575e36e23dba76628') in 0.032443 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FBX format/crops_dirtSingle.fbx
+  artifactKey: Guid(0d97fd2083c54f843a71602ebbfbe845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_dirtSingle.fbx using Guid(0d97fd2083c54f843a71602ebbfbe845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5070c593ce293e4c9f1a08735f5ac342') in 0.041771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/stone_smallFlatC.fbx
+  artifactKey: Guid(99f875128b6e0ab4195390a536fc498a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_smallFlatC.fbx using Guid(99f875128b6e0ab4195390a536fc498a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '204c01aca45ddb7ed8c7df2e144f1fc4') in 0.040965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FBX format/tree_palmTall.fbx
+  artifactKey: Guid(28731304ca518384c95aed535c377c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_palmTall.fbx using Guid(28731304ca518384c95aed535c377c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecb3df2180e9c6e6432527305eacf4eb') in 0.039828 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FBX format/cliff_diagonal_rock.fbx
+  artifactKey: Guid(23c143579cca3114a8f1c88b41043b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_diagonal_rock.fbx using Guid(23c143579cca3114a8f1c88b41043b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '831c25e2e06d98cf15aaabfae67a1146') in 0.032854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/statue_block.fbx
+  artifactKey: Guid(8515f7dea15dd1047bef06dc9759b13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/statue_block.fbx using Guid(8515f7dea15dd1047bef06dc9759b13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca089d01648a702ced2ebf9377b6df12') in 0.057688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format
+  artifactKey: Guid(c063e1d303237434487711c3119ce083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format using Guid(c063e1d303237434487711c3119ce083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f2496fe9e76d3e05eb5977e15750b1') in 0.009134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FBX format/rock_tallB.fbx
+  artifactKey: Guid(d2256dd7c7632fe44b3696af31f359bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_tallB.fbx using Guid(d2256dd7c7632fe44b3696af31f359bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa7520cd4c573a75f27cea85e7440e22') in 0.093718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/FBX format/ground_riverCross.fbx
+  artifactKey: Guid(c43ce6e0dc68dea42ba19cbfa60d7e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/ground_riverCross.fbx using Guid(c43ce6e0dc68dea42ba19cbfa60d7e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71da8e63f6b13dcacc8cd2d73c6bcdf3') in 0.056685 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/FBX format/tree_cone_dark.fbx
+  artifactKey: Guid(b7d5a5d7fc3a47043a5ade3d8c9198ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_cone_dark.fbx using Guid(b7d5a5d7fc3a47043a5ade3d8c9198ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45b3cb50adf0f16e849c525c6e9cf9d') in 0.112579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/mushroom_tanGroup.fbx
+  artifactKey: Guid(bedd889624dab204eb7aaf375a7adbfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/mushroom_tanGroup.fbx using Guid(bedd889624dab204eb7aaf375a7adbfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce7d7353ea34e6cb65f4088e668dab74') in 0.042477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FBX format/log_stack.fbx
+  artifactKey: Guid(41c8db98831eec0498612600e1611ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/log_stack.fbx using Guid(41c8db98831eec0498612600e1611ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9903535ff6c15744f1ec91b18ee3c2d9') in 0.043626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/FBX format/rock_tallI.fbx
+  artifactKey: Guid(212346a46a21f34489bdf5ee7fcc89a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_tallI.fbx using Guid(212346a46a21f34489bdf5ee7fcc89a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f37deb329f34fd26322cbab40db4d7e') in 0.072992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/bridge_woodNarrow.fbx
+  artifactKey: Guid(4a49faea5aae68a41b8f453b3d7c5aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_woodNarrow.fbx using Guid(4a49faea5aae68a41b8f453b3d7c5aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c81afed4a4ef4c20d8a3cdec1b196d8') in 0.053717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/ground_pathEndClosed.fbx
+  artifactKey: Guid(d56668c7c71d20a47b62338c5038a677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/ground_pathEndClosed.fbx using Guid(d56668c7c71d20a47b62338c5038a677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e459751786b8ec43ed932f9a04d73b') in 0.043307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/plant_bushDetailed.fbx
+  artifactKey: Guid(27295ab1c9d1cc945b9269eed913bd54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/plant_bushDetailed.fbx using Guid(27295ab1c9d1cc945b9269eed913bd54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8aa872fb29ed7726bd56013ccc3f72') in 0.030942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FBX format/rock_largeF.fbx
+  artifactKey: Guid(260ce99b065194e41bad6538f379150a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_largeF.fbx using Guid(260ce99b065194e41bad6538f379150a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43ac9533ddd9a6f03e5c6990e4686cf7') in 0.051596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FBX format/mushroom_redGroup.fbx
+  artifactKey: Guid(c02d0561c3562184fb94a716addd2cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/mushroom_redGroup.fbx using Guid(c02d0561c3562184fb94a716addd2cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c98646df729459e3bb597936381025cf') in 0.047370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/stone_smallFlatA.fbx
+  artifactKey: Guid(898149a670792ab4bab01129ae9bfe81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_smallFlatA.fbx using Guid(898149a670792ab4bab01129ae9bfe81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0285c725ce47472fb4f38daa94702b8b') in 0.040351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/FBX format/cliff_diagonal_stone.fbx
+  artifactKey: Guid(73587285c7001664281a8effe405c2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_diagonal_stone.fbx using Guid(73587285c7001664281a8effe405c2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2e3f95ff62be7cc0c6c27a2031536d1') in 0.030883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FBX format/path_wood.fbx
+  artifactKey: Guid(2132b184dbebbe74b912c2b59df3dc15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/path_wood.fbx using Guid(2132b184dbebbe74b912c2b59df3dc15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52edead037d8eb0581fae27fda4769ed') in 0.038563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/FBX format/path_stoneCorner.fbx
+  artifactKey: Guid(ed7db30a5a5e118459e067095fb8e26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/path_stoneCorner.fbx using Guid(ed7db30a5a5e118459e067095fb8e26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98000a80fac1c14fb7d8980ae702b610') in 0.049529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FBX format/cliff_halfCorner_stone.fbx
+  artifactKey: Guid(6f418d5753087c1488056dfe5c65c9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_halfCorner_stone.fbx using Guid(6f418d5753087c1488056dfe5c65c9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d820ad6166233cc1214b288bdcb426') in 0.040265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/flower_redA.fbx
+  artifactKey: Guid(0e6f4a0b1b224804e89df17baeb02fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/flower_redA.fbx using Guid(0e6f4a0b1b224804e89df17baeb02fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '250489fba73e4e7c2d572557f55c5141') in 0.044245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/FBX format/cliff_corner_stone.fbx
+  artifactKey: Guid(8d27adaf02dd8744c9b3667eebe4d4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_corner_stone.fbx using Guid(8d27adaf02dd8744c9b3667eebe4d4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dadc71dcaf2b07769325e385cdb1a84f') in 0.034022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/rock_largeA.fbx
+  artifactKey: Guid(e53bb81d249729a439b25babb26b293b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_largeA.fbx using Guid(e53bb81d249729a439b25babb26b293b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa7eb463f4325d06d326f483c0bb17cd') in 0.039086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/rock_tallC.fbx
+  artifactKey: Guid(d72d6cca24f2b044e99ecc1a51035337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_tallC.fbx using Guid(d72d6cca24f2b044e99ecc1a51035337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ce7166cb17f80fae04e144039abb75') in 0.043532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/cliff_topDiagonal_stone.fbx
+  artifactKey: Guid(2faa954b50706a94d9e07b1a73235314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_topDiagonal_stone.fbx using Guid(2faa954b50706a94d9e07b1a73235314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081fd9fa5319543de28110e731a1c8db') in 0.038241 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/FBX format/crop_carrot.fbx
+  artifactKey: Guid(0bc4bc73701066a4cbf0d9068e295143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crop_carrot.fbx using Guid(0bc4bc73701066a4cbf0d9068e295143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '010afb306a1da97f3c06deeb1d0d781f') in 0.037583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/bridge_side_stoneRound.fbx
+  artifactKey: Guid(d03df43f8ef9e134caf138347ae96ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_side_stoneRound.fbx using Guid(d03df43f8ef9e134caf138347ae96ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '278a19ea06066349cb0550aea5314f33') in 0.045864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/cliff_blockSlope_rock.fbx
+  artifactKey: Guid(04462f234eff53c4bb256ecd60973bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_blockSlope_rock.fbx using Guid(04462f234eff53c4bb256ecd60973bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30298a888cbbb8536ed0e835231fe7a9') in 0.038947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/crops_dirtDoubleRow.fbx
+  artifactKey: Guid(7f18a01782cbf2346a0287ed707451b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_dirtDoubleRow.fbx using Guid(7f18a01782cbf2346a0287ed707451b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e00dcb595d3336763ecb30616a39a9') in 0.041951 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/FBX format/stump_squareDetailed.fbx
+  artifactKey: Guid(c7bd4a5a5704e7448af342b1db3280ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stump_squareDetailed.fbx using Guid(c7bd4a5a5704e7448af342b1db3280ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbb677da5560f76ede93d40b9485fdb') in 0.049678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/FBX format/statue_head.fbx
+  artifactKey: Guid(cea12ec83c28579449d773ffbe5c2bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/statue_head.fbx using Guid(cea12ec83c28579449d773ffbe5c2bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a284a527beb89288092ff06c975c9461') in 0.065509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/stone_tallG.fbx
+  artifactKey: Guid(e9edc07d2a78af148adab595d04533d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_tallG.fbx using Guid(e9edc07d2a78af148adab595d04533d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02fc82ddd600d39bd484ebcb53014bed') in 0.048693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/lily_large.fbx
+  artifactKey: Guid(8254eaf1171c26347a4930e6b80fa4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/lily_large.fbx using Guid(8254eaf1171c26347a4930e6b80fa4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ff0dcaba78c4867786e6d399dd51f65') in 0.050818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/tree_detailed_fall.fbx
+  artifactKey: Guid(f18768393eeed30428fa71fddb728b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_detailed_fall.fbx using Guid(f18768393eeed30428fa71fddb728b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '051c59db892a708966d8e53644bd669f') in 0.042170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FBX format/cliff_blockSlopeHalfWalls_rock.fbx
+  artifactKey: Guid(d17e444159304a246b6397de6ace9b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_blockSlopeHalfWalls_rock.fbx using Guid(d17e444159304a246b6397de6ace9b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d1abc96486fb343377f8aec8559d54b') in 0.040596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/FBX format/tree_simple_dark.fbx
+  artifactKey: Guid(89b2eda40a469324e8ffa159463f2857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_simple_dark.fbx using Guid(89b2eda40a469324e8ffa159463f2857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '481892fedd3be090e61810d78ff6ab7b') in 0.054291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/FBX format/bed.fbx
+  artifactKey: Guid(3d8e5c106b0108749a7c1872c24471cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bed.fbx using Guid(3d8e5c106b0108749a7c1872c24471cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebcbd69bf0ed25391a61e8b7a81f04d5') in 0.049873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/hanging_moss.fbx
+  artifactKey: Guid(8a96ac7c39100f74c8bf586ad965f68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/hanging_moss.fbx using Guid(8a96ac7c39100f74c8bf586ad965f68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e54afeaf7dc9d24d1e31b082bfe2816') in 0.048127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/FBX format/tree_pineTallC.fbx
+  artifactKey: Guid(c3203132810961a4d9b0435c9b48fc79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_pineTallC.fbx using Guid(c3203132810961a4d9b0435c9b48fc79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2359e4f657657393b0e0587d79d7ac2') in 0.040087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/FBX format/cliff_cave_stone.fbx
+  artifactKey: Guid(4c9b6cf7270bb374cb72780d7756e4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_cave_stone.fbx using Guid(4c9b6cf7270bb374cb72780d7756e4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca3eae0d4819aafa9047fb3c097eefc0') in 0.028826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/flower_redC.fbx
+  artifactKey: Guid(2d995d610c2433143b1cd84f85497efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/flower_redC.fbx using Guid(2d995d610c2433143b1cd84f85497efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17fa3e4bc3e6f4533302b7d63655b99e') in 0.047507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/statue_obelisk.fbx
+  artifactKey: Guid(171ba621805c69c4499764deb94ffe19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/statue_obelisk.fbx using Guid(171ba621805c69c4499764deb94ffe19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1f1a590a93a3da54909f88750d235b3') in 0.045925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FBX format/crops_bambooStageB.fbx
+  artifactKey: Guid(90aa4aeb7993421419999a54a14c990e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_bambooStageB.fbx using Guid(90aa4aeb7993421419999a54a14c990e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ce77d2b3a91bef942b509f7b484e638') in 0.035145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FBX format/tree_small.fbx
+  artifactKey: Guid(380e493494a32e2428b7caa854af9575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_small.fbx using Guid(380e493494a32e2428b7caa854af9575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ecb21d7816bd606072bea155e82656b') in 0.045817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/fence_bendCenter.fbx
+  artifactKey: Guid(02ece9201e6796441bfa3b65f2befad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/fence_bendCenter.fbx using Guid(02ece9201e6796441bfa3b65f2befad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfa1b0e0006c27191b1944d73561db80') in 0.049193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/FBX format/bridge_wood.fbx
+  artifactKey: Guid(3b92e7f4043f8954d8fc8c883448d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_wood.fbx using Guid(3b92e7f4043f8954d8fc8c883448d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6ad2909a0f1fa6e7c77f9dde19a8fe') in 0.066286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/tree_tall.fbx
+  artifactKey: Guid(2fa0d7ae272028b43bc169f7d8740c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_tall.fbx using Guid(2fa0d7ae272028b43bc169f7d8740c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '211d3d949af7271965f17170656612fd') in 0.058012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/FBX format/stone_largeA.fbx
+  artifactKey: Guid(fef45dcad2e484b43a2fa67d70881527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_largeA.fbx using Guid(fef45dcad2e484b43a2fa67d70881527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c1376dfc9da15adb0c9994c1599b85d') in 0.040176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/FBX format/flower_purpleB.fbx
+  artifactKey: Guid(5b4099d7b2e15334cb2f4a93310d00e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/flower_purpleB.fbx using Guid(5b4099d7b2e15334cb2f4a93310d00e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7000e4ba609c37c43fef49f39b9df191') in 0.035008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/grass_leafs.fbx
+  artifactKey: Guid(f4cf424ea5a6683458bfe7ad6d628043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/grass_leafs.fbx using Guid(f4cf424ea5a6683458bfe7ad6d628043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46144ec36ea8ba4a50756b44fb158bd5') in 0.039887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/bridge_center_wood.fbx
+  artifactKey: Guid(dae133305b8c32a46826eee546d322fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_center_wood.fbx using Guid(dae133305b8c32a46826eee546d322fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4828e59e852b7abd1472e87af6af88') in 0.053812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/bridge_stoneRoundNarrow.fbx
+  artifactKey: Guid(2d18c590c8991e147ac910f6d406d8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_stoneRoundNarrow.fbx using Guid(2d18c590c8991e147ac910f6d406d8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b3e5940573eaef70c6fa4da217a218') in 0.044062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/flower_purpleA.fbx
+  artifactKey: Guid(f49b5f90aa4ebc24d83318a62348adf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/flower_purpleA.fbx using Guid(f49b5f90aa4ebc24d83318a62348adf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b259cfbd21eb9183b2bd15ee00df0a68') in 0.049500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/tree_small_dark.fbx
+  artifactKey: Guid(a2abb686193f258489b7e688e451fec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_small_dark.fbx using Guid(a2abb686193f258489b7e688e451fec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42ab14e0692b3813ee08ef96d5a39328') in 0.048287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/flower_purpleC.fbx
+  artifactKey: Guid(4e3d8ea64d5b19048a65bb850a4d0a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/flower_purpleC.fbx using Guid(4e3d8ea64d5b19048a65bb850a4d0a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e3b2a669287aa11acf7e66c55eb087b') in 0.065201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FBX format/mushroom_tanTall.fbx
+  artifactKey: Guid(ea81e2279e8083242b4b7440e1593568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/mushroom_tanTall.fbx using Guid(ea81e2279e8083242b4b7440e1593568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b1595555083c9417a20d6e0cd73f2de') in 0.037118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/FBX format/fence_corner.fbx
+  artifactKey: Guid(eb4cda126139ac54b996bd6fcf0f6d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/fence_corner.fbx using Guid(eb4cda126139ac54b996bd6fcf0f6d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3399fcaa1970daf7db52ab6f3efdeece') in 0.038979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FBX format/cliff_half_stone.fbx
+  artifactKey: Guid(1c84c77c2abed724c9f33d96c7a171cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_half_stone.fbx using Guid(1c84c77c2abed724c9f33d96c7a171cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ca1daaebe4d5cbcd1a5345ec6dc8ab') in 0.055836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/tree_cone.fbx
+  artifactKey: Guid(aa5ac57684d70a74faa80c791039a06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_cone.fbx using Guid(aa5ac57684d70a74faa80c791039a06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a59760ea236f34f76b07079b6158d29') in 0.054602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/ground_pathBend.fbx
+  artifactKey: Guid(6d3ca5d452967aa4cad76e4a991ccb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/ground_pathBend.fbx using Guid(6d3ca5d452967aa4cad76e4a991ccb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0357b861be52934685d2c984d68f3296') in 0.052178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/platform_stone.fbx
+  artifactKey: Guid(1498a48befaed7b45b7f9b5a6f106429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/platform_stone.fbx using Guid(1498a48befaed7b45b7f9b5a6f106429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd44e29258e0dbd9cb8b02b0905584260') in 0.063748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/FBX format/rock_tallF.fbx
+  artifactKey: Guid(68d64dc6699cf9d4684c08559e286e47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/rock_tallF.fbx using Guid(68d64dc6699cf9d4684c08559e286e47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6618cd7f55e4822fe6bfc32091e8e95e') in 0.048662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/tree_oak.fbx
+  artifactKey: Guid(653c9ef2cb76c1242830129e0acde73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_oak.fbx using Guid(653c9ef2cb76c1242830129e0acde73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1e991cc9f2bc52f82b9d53a7558e26d') in 0.066430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/FBX format/canoe_paddle.fbx
+  artifactKey: Guid(7bb98e6bc3c91084cb08200a6434bfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/canoe_paddle.fbx using Guid(7bb98e6bc3c91084cb08200a6434bfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73d1b34175717bd97dbbbc391e92e7be') in 0.031115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/stone_smallA.fbx
+  artifactKey: Guid(af6fa351254fe6343b4fcefc3cbb7e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_smallA.fbx using Guid(af6fa351254fe6343b4fcefc3cbb7e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf3a513101c453b5618c87c82754219') in 0.027700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/plant_bushSmall.fbx
+  artifactKey: Guid(ff363aa930a9d314ba3183bfb3b89067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/plant_bushSmall.fbx using Guid(ff363aa930a9d314ba3183bfb3b89067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9dca8a2e299c40b678edf9c10374f6') in 0.036553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/FBX format/tree_plateau_fall.fbx
+  artifactKey: Guid(1ada5367afc56ec46bb4e7353ffc54b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_plateau_fall.fbx using Guid(1ada5367afc56ec46bb4e7353ffc54b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd7c9805b19fb167384ec444e7d8a9b1') in 0.052709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/FBX format/stone_tallC.fbx
+  artifactKey: Guid(70f0da35b617e8a4bb05aad5df333d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_tallC.fbx using Guid(70f0da35b617e8a4bb05aad5df333d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd0d62c50dde7b8fc0ca1e6b39d7b1c') in 0.050496 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FBX format/stump_squareDetailedWide.fbx
+  artifactKey: Guid(505cec0b907e6bd4698889cb5fa19acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stump_squareDetailedWide.fbx using Guid(505cec0b907e6bd4698889cb5fa19acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8f96d3d662f3231980134b081bb2c4') in 0.049395 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/FBX format/tree_pineTallC_detailed.fbx
+  artifactKey: Guid(267f2296599d46b48af7098538e0daa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_pineTallC_detailed.fbx using Guid(267f2296599d46b48af7098538e0daa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0048b3bb267804384420404d3f2150ad') in 0.041726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/stone_tallF.fbx
+  artifactKey: Guid(d18337b89a9949743be63bd40de37d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_tallF.fbx using Guid(d18337b89a9949743be63bd40de37d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '951cbe42b66c101977c556d49321e113') in 0.046372 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/crops_dirtDoubleRowCorner.fbx
+  artifactKey: Guid(98610e4c2f4572d4aa14fd76defddbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_dirtDoubleRowCorner.fbx using Guid(98610e4c2f4572d4aa14fd76defddbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43c8abb527134ada0e3e522bb992039b') in 0.042401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FBX format/tree_plateau_dark.fbx
+  artifactKey: Guid(08fb11b74dec5074799e4e243c9ab83d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_plateau_dark.fbx using Guid(08fb11b74dec5074799e4e243c9ab83d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdd75f9e6a8b490a5d88888c9d336d13') in 0.044536 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/cliff_stepsCornerInner_stone.fbx
+  artifactKey: Guid(6a4eefa566c2745458966e4e8049e720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_stepsCornerInner_stone.fbx using Guid(6a4eefa566c2745458966e4e8049e720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078232c326c90dc400ae2f194ea95617') in 0.046229 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/log_stackLarge.fbx
+  artifactKey: Guid(fe4f5c0150f935243ae0fe40ff2c4a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/log_stackLarge.fbx using Guid(fe4f5c0150f935243ae0fe40ff2c4a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1543135ea27756b483f23e03c58994dd') in 0.048151 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/FBX format/bridge_center_stone.fbx
+  artifactKey: Guid(5dcc45d538ed0404d8d67a78d5f66258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_center_stone.fbx using Guid(5dcc45d538ed0404d8d67a78d5f66258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2239ef12ebfefb4589594934bcd1ce3f') in 0.048293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/FBX format/ground_riverBend.fbx
+  artifactKey: Guid(acf67206c5ce8d54e828fe5e545463bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/ground_riverBend.fbx using Guid(acf67206c5ce8d54e828fe5e545463bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c14e595e3ab7ffb7a7bc3d87fc25013b') in 0.063775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FBX format/grass_large.fbx
+  artifactKey: Guid(2316f1253b6655a4c9edc77807a7a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/grass_large.fbx using Guid(2316f1253b6655a4c9edc77807a7a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '092c2277b6f135928b212fde03c5f97f') in 0.034127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/cliff_blockHalf_stone.fbx
+  artifactKey: Guid(d0c63369a54ba3b48b79781d302891be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_blockHalf_stone.fbx using Guid(d0c63369a54ba3b48b79781d302891be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2fd32bac24459bef01186423a28e844') in 0.060779 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/tree_palm.fbx
+  artifactKey: Guid(b6c7c3387ca884b4bb284aa79730d935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_palm.fbx using Guid(b6c7c3387ca884b4bb284aa79730d935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58f0cf5ddecffa2389a4d47beff56330') in 0.046299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/FBX format/stump_old.fbx
+  artifactKey: Guid(db1b83ab544b6af4fb4aabcc35916d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stump_old.fbx using Guid(db1b83ab544b6af4fb4aabcc35916d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33893b2b540c8822206c7342886237af') in 0.037246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/crops_bambooStageA.fbx
+  artifactKey: Guid(e747c9eb4bc98724dbfb483a1a73817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_bambooStageA.fbx using Guid(e747c9eb4bc98724dbfb483a1a73817d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cc2eee2663c9b7d85397f7e3686e987') in 0.031001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/FBX format/cliff_cornerInner_stone.fbx
+  artifactKey: Guid(3117030c52c4a8a4fa92dfc974036b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_cornerInner_stone.fbx using Guid(3117030c52c4a8a4fa92dfc974036b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9478fba387df2fe9a28051eb210cbee2') in 0.035873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/tree_cone_fall.fbx
+  artifactKey: Guid(682a7dd65ac77864f933ab82cfb609b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_cone_fall.fbx using Guid(682a7dd65ac77864f933ab82cfb609b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16ea263ab02909bbc93ba9d3b8539b0d') in 0.038324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FBX format/cliff_waterfall_rock.fbx
+  artifactKey: Guid(ae922ea5243bbf143a2e1ce25efe2f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_waterfall_rock.fbx using Guid(ae922ea5243bbf143a2e1ce25efe2f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c16f5381e374dff0a086f3e67435de') in 0.043294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FBX format/cliff_blockCave_rock.fbx
+  artifactKey: Guid(95781557b9667c242a29383ae95c7d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_blockCave_rock.fbx using Guid(95781557b9667c242a29383ae95c7d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1186e6adc3b64b15835f888b796825b9') in 0.038764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/ground_riverCornerSmall.fbx
+  artifactKey: Guid(69c600054d372214ca2dfbdedec44b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/ground_riverCornerSmall.fbx using Guid(69c600054d372214ca2dfbdedec44b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4ebbb59861a6cee71b577d5da9ae30') in 0.055070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/FBX format/tree_pineTallB_detailed.fbx
+  artifactKey: Guid(906c4a7b38b78ff4085e11d7846ecd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_pineTallB_detailed.fbx using Guid(906c4a7b38b78ff4085e11d7846ecd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aa1e6facd72985e1e9aa11040b505e2') in 0.045862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/FBX format/stone_smallI.fbx
+  artifactKey: Guid(827815ae918ab1946a8ff2aa82dff709) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_smallI.fbx using Guid(827815ae918ab1946a8ff2aa82dff709) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '900d529e6fbc578a14a2cbf9091b9ffa') in 0.034244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/FBX format/cliff_cornerTop_stone.fbx
+  artifactKey: Guid(85bab22e016e338409c722590eab31a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_cornerTop_stone.fbx using Guid(85bab22e016e338409c722590eab31a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '507ae3b1fcb2fa2b06c496c9c1f9da55') in 0.042698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/cliff_blockSlope_stone.fbx
+  artifactKey: Guid(79e1fce80048bed46999d83637b4ba30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_blockSlope_stone.fbx using Guid(79e1fce80048bed46999d83637b4ba30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1f9eb97ed1cd0e28e6724cc20ed1582') in 0.045261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FBX format/sign.fbx
+  artifactKey: Guid(e47737d2920ee4c4290df4d60c7500a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/sign.fbx using Guid(e47737d2920ee4c4290df4d60c7500a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3a265154285ecfb56104f91fba5067d') in 0.072859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FBX format/plant_bushLarge.fbx
+  artifactKey: Guid(a1b7bfcfa28860b4da53db51884107ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/plant_bushLarge.fbx using Guid(a1b7bfcfa28860b4da53db51884107ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f68070013ae8099a8f6280a01ed303d') in 0.048510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/stone_largeC.fbx
+  artifactKey: Guid(5bec6a7fe96bb7240a34676b2b3c5389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/stone_largeC.fbx using Guid(5bec6a7fe96bb7240a34676b2b3c5389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7293489a8fbc69d8f9a1a67df5d0f041') in 0.035659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/FBX format/tree_simple_fall.fbx
+  artifactKey: Guid(63b592cb6b40a8a4781913e20f9cca02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_simple_fall.fbx using Guid(63b592cb6b40a8a4781913e20f9cca02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f436548cc9e26992a6554addc410c0bf') in 0.044875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/FBX format/bridge_side_wood.fbx
+  artifactKey: Guid(756090241337cb14c998fb29900914c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/bridge_side_wood.fbx using Guid(756090241337cb14c998fb29900914c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404332572397c89e964aa0b096c3db6a') in 0.055583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/FBX format/tree_pineRoundF.fbx
+  artifactKey: Guid(55b807a733c3a394da205e3ecc32ab76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_pineRoundF.fbx using Guid(55b807a733c3a394da205e3ecc32ab76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d06dbbf03294704290df893060f81b') in 0.045905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FBX format/cliff_cornerLarge_stone.fbx
+  artifactKey: Guid(9378ba0c821288443a83e63698ce6c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/cliff_cornerLarge_stone.fbx using Guid(9378ba0c821288443a83e63698ce6c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2a94eb72b5dff7962db6c6461718b7a') in 0.044462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/FBX format/tree_detailed_dark.fbx
+  artifactKey: Guid(3bdcbbe0a415c0d4a83ecf4a92e3a4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_detailed_dark.fbx using Guid(3bdcbbe0a415c0d4a83ecf4a92e3a4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be79fd3274b2a3238aa5d645fd4bc274') in 0.055905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/FBX format/tree_palmDetailedShort.fbx
+  artifactKey: Guid(0a22f8db5493bda46ad86e9e42e6d065) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/tree_palmDetailedShort.fbx using Guid(0a22f8db5493bda46ad86e9e42e6d065) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3152c3591c39c9b5e5607aa0c2f6b2b9') in 0.073331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/FBX format/crops_dirtRowCorner.fbx
+  artifactKey: Guid(6935c76b2c2a08c4895f179dc6f7b0b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FBX format/crops_dirtRowCorner.fbx using Guid(6935c76b2c2a08c4895f179dc6f7b0b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b34f60b6476ba57ce20ee470573cef4a') in 0.043736 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

@@ -36,8 +36,8 @@ namespace Sahil.Perlin
                 
                 totalAmplitutde+= m_octaves[i].Amplitude;
             }
-
-            value/=totalAmplitutde;
+            Random.seed = m_initialSeed;
+            value /=totalAmplitutde;
             value = (value * 2) - 1;   
 
             return value;

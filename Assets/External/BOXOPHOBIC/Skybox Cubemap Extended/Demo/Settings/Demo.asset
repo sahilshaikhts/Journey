@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 114753784628472484}
   - {fileID: 114905349723521868}
   - {fileID: 114059884413532516}
-  - {fileID: 114232185289346146}
   - {fileID: 114288678441462590}
   - {fileID: 114964227162046496}
 --- !u!114 &114059884413532516
@@ -1380,40 +1379,6 @@ MonoBehaviour:
   quality:
     overrideState: 1
     value: 2
---- !u!114 &114232185289346146
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
-  m_Name: LensDistortion
-  m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 30
-  intensityX:
-    overrideState: 1
-    value: 1
-  intensityY:
-    overrideState: 1
-    value: 1
-  centerX:
-    overrideState: 1
-    value: 0
-  centerY:
-    overrideState: 1
-    value: 0
-  scale:
-    overrideState: 1
-    value: 1
 --- !u!114 &114288678441462590
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1470,19 +1435,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 2
+    value: 0.3
   threshold:
     overrideState: 1
-    value: 1
+    value: 1.1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0.351
   clamp:
     overrideState: 1
     value: 65472
@@ -1494,7 +1459,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0.76246667, b: 0.2783019, a: 1}
   fastMode:
     overrideState: 1
     value: 1
@@ -1504,7 +1469,7 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 1000
+    value: 998.61
 --- !u!114 &114905349723521868
 MonoBehaviour:
   m_ObjectHideFlags: 3

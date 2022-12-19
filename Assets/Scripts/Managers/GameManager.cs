@@ -32,11 +32,12 @@ public class GameManager : MonoBehaviour
     {
         gameState = State.Running;
 
-        m_mountainGenerator.Initialize(150, m_spawnChunkSize);
-
-        StartCoroutine(ExtendMountain(1));
-        StartCoroutine(SpawnEnvironment(.4f));
-    }
+        m_mountainGenerator.Initialize(Random.Range(0,1000));
+        m_spawnerManager.Initialize();
+        
+        ExtendMountain(m_spawnChunkSize*5);
+        StartCoroutine(ExtendMountainInInterval(2));
+    }   
 
     private void FixedUpdate()
     {
@@ -58,20 +59,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    IEnumerator ExtendMountain(float interval)
+    IEnumerator ExtendMountainInInterval(float interval)
     {
-
         while (gameState != State.Over)
         {
             yield return new WaitForSeconds(interval);
             if (gameState == State.Running)
             {
-                m_mountainGenerator.ExtendMesh(m_spawnChunkSize);
+                ExtendMountain(m_spawnChunkSize);
             }
         }
     }
-
+    void ExtendMountain(float aSpawnChunkSize)
+    {
+        Vector3[] newPoints = m_mountainGenerator.ExtendMesh(aSpawnChunkSize);
+        m_spawnerManager.PopulateArea(newPoints);
+        
+    }
     IEnumerator CropMountainMesh(float interval)
     {
         while (gameState != State.Over)
@@ -97,28 +101,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnEnvironment(float interval)
+    void SpawnObstacle()
     {
-
-        while (gameState == State.Running)
-        {
-            yield return new WaitForSeconds(interval);
-
-            if (gameState == State.Running)
-            {
-
-                //m_spawnerManager.SpawnLandscapes();
-            }
-        }
-    }
-
-    IEnumerator DeSpawnObstacle()
-    {
-        if (gameState == State.Running)
-        {
-        }
-
-        yield return new WaitForEndOfFrame();
     }
 
     void RecenterObstacles(Vector3 distance)
